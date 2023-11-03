@@ -14,9 +14,9 @@ class Exercice2
 		{
 			for (int j = i + 1; j < prix_size; j++)
 			{
-				if ((prix[i] - prix[j]) > max)
+				if ((prix[j] - prix[i]) > max)
 				{
-					max = prix[i] - prix[j];
+					max = prix[j] - prix[i];
 				}
 			}
 		}
