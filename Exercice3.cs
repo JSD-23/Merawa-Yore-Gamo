@@ -1,25 +1,32 @@
 using System;
+using System.Collections.Generic;
 
-public class Exercice3
+public class LRUCache
 {
+	private int capacite;
+	Dictionary<int,int> cache;
+	
     public LRUCache(int capacite)
     {
-        // Implémenter la logique d'initialisation
+    	this.capacite = capacite;
+    	cache = new Dictionary<int, int>(capacite);
     }
 
     public int Get(int cle)
     {
-        // Implémenter la logique de récupération
-        return 0;
+    	return cache[cle];
     }
 
     public void Put(int cle, int valeur)
     {
-        // Implémenter la logique d'insertion
+    	cache[cle] = valeur;
     }
 
     public void Free()
     {
-        // Implémenter la logique de libération
+    	foreach (KeyValuePair<int,int> kvp in cache)
+    	{
+    		cache.Remove(kvp.Key);
+    	}
     }
 }
